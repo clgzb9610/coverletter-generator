@@ -16,7 +16,6 @@ def get_template(keyword):
         return ""
 
 
-
 """A function that returns an introduction part for the cover letter"""
 def get_introduction():
     return ""

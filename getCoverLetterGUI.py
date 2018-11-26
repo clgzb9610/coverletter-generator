@@ -1,3 +1,8 @@
+"""
+This file generates the GUI interface for the main program
+"""
+
+
 from tkinter import *
 import tkinter.filedialog
 import getTemplate
@@ -11,6 +16,7 @@ class getCoverLetterGUI:
 
     def setupWidgets(self):
         self._initBasicControls()
+        self._initKeywordSelections()
 
 
     def goPorgram(self):
@@ -28,7 +34,6 @@ class getCoverLetterGUI:
     """Quits the program"""
     def masterQuit(self):
         self.root.destroy()
-
 
 
     #####################################
@@ -53,6 +58,10 @@ class getCoverLetterGUI:
         loadErrorOutputLabel = Label(basicControlFrame, textvariable=self.errorMessage, font="Arial 12", padx=5, pady=0)
         loadErrorOutputLabel.grid(row=10, column=1)
 
+
+    def _initKeywordSelections(self):
+        #TODO: figure out what to do here
+        return
 
     def _getFilename(self, promptString):
         """Pops up a dialog box to ask the user for a filename, returns a boolean if the file was chosen well,
