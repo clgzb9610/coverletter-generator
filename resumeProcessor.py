@@ -19,7 +19,7 @@ def process_text(file_path):
     strList = fileIn.readlines()
     newStr = ""
     for i in strList:
-        i = i.strip()
+        i = i.decode('utf-8').strip()
         if i != '':
             newStr = newStr + i
         else:

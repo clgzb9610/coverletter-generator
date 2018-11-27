@@ -1,0 +1,68 @@
+WindLogics is the optimization and analytics team for the world’s largest generator of renewable energy from the wind and sun. As part of NextEra Energy, we thrive on creating innovative forecasting and optimization solutions that change the industry for the better.
+
+Position Specific Description
+
+WindLogics provides innovative forecasting and optimization solutions that enable low cost, reliable and sustainable power systems.
+
+This internship on the New Product Engineering team will include developing software and tools to help solve renewable energy analytics problems. The candidate can expect to employ modern software engineering methods and technologies to enable solutions in domain areas that may include load forecasting, wind power forecasting, smart grid analytics, distributed energy management, and customer service analytics. The candidate will achieve successful results by effectively participating in the WindLogics software development process, helping to build robust software solutions and articulating results to other business units.
+
+Primary job functions include:
+• Building software to acquire, process and visualize large datasets.
+• Software testing.
+• Participating in the WindLogics Scrum software development process.
+• Developing solutions for a cloud based environment.
+• Evaluating cloud based tools and development frameworks.
+
+The internship will provide mentoring and practical hands-on experience in a corporate setting, and exposure to business unit activities, leadership and culture (e.g., staff meetings, networking, and meetings with key personnel). The position will be based in St. Paul, MN.
+
+Desired Qualifications:
+• Proficiency in JavaScript, Scala, Python or R.
+• Knowledge of both relational (SQL) and non-relational (NoSQL) data storage technologies and modeling.
+• Familiarity writing software to utilize a cluster-computing framework (e.g., Spark).
+• Experience creating software intended to run in an elastic computing environment (e.g., Amazon Web Services).
+• Excellent analytical, interpersonal, communication and organizational skills.
+
+Job Overview
+
+Employees in the role will be provided mentoring and practical hands on experience for relevant career-related activities encountered in the student’s area of study or specialization. To be considered for this position the applicant must be actively enrolled at a college or university as a full-time student seeking a bachelor’s degree or higher. Candidate must also have a current GPA of 3.00 or higher (on a 0.00 to 4.00 scale).
+
+Job Duties & Responsibilities
+
+• Assists department with assigned projects
+
+• Completes challenging projects and assignments
+
+• Presents final project to senior leadership at the end of the internship
+
+• Performs other job-related duties as assigned
+
+Required Qualifications
+
+• High School Grad / GED
+
+Preferred Qualifications
+
+• Effective Written Communications
+• Effective Verbal Communications
+
+Employee Group: Non Exempt
+
+Employee Type: Intern
+
+Job Category: Intern
+
+Organization: WindLogics Inc
+
+Location: St. Paul, Minnesota
+
+Other Work Locations: Florida
+
+Relocation Provided: No
+
+NextEra Energy is an Equal Opportunity Employer. Qualified applicants are considered for employment without regard to race, color, age, national origin, religion, marital status, sex, sexual orientation, gender identity, gender expression, genetics, disability, protected veteran status or any other basis prohibited by law. We are committed to a diverse and inclusive workplace.
+
+If you require special support or accommodation while seeking employment with NextEra Energy, please send an e-mail to AskHR@NEE.com, providing your name, telephone number and the best time for us to reach you. Alternatively, you may call 1-844-694-4748 (Option 1, Press 6) between 8 a.m. and 5 p.m. EST Monday-Friday. Please do not use this line to inquire about your application status.
+
+NextEra Energy will not discharge or in any other manner discriminate against employees or applicants because they have inquired about, discussed, or disclosed their own pay or the pay of another employee or applicant. However, employees who have access to the compensation information of other employees or applicants as a part of their essential job functions cannot disclose the pay of other employees or applicants to individuals who do not otherwise have access to compensation information, unless the disclosure is (a) in response to a formal complaint or charge, (b) in furtherance of an investigation, proceeding, hearing, or action, including an investigation conducted by the employer, or (c) consistent with the contractor’s legal duty to furnish information.
+
+NextEra Energy does not accept any unsolicited resumes or referrals from any third-party recruiting firms or agencies. Please see our policy for more information

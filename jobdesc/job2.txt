@@ -1,0 +1,23 @@
+Job Description
+Job Description BAE Systems in Minneapolis MN is seeking a summer intern pursuing a career in the field of software engineering who wishes to gain hands-on experience to complement their technical course work. The qualified candidate will have the opportunity to assist in the design and development of software used in defense related applications. Tasks may include developing requirements, design, and related documentation, coding, debugging and integration testing. The intern will work within a team environment, but under the guidance of a mentor to learn about software engineering principles and technical development specific to BAE Systems.
+
+This internship is for a 3 month period (without benefits or relocation offered).
+
+Required Skills and Education
+• Enrolled in an accredited 4-year engineering/technical degree program.
+• Strong communication skills (verbal and written)
+• Ability to work independently and as part of a team
+• Basic understanding of and skills in software design and coding, including Object Oriented Analysis & Design
+• Exposure to multiple high level programming languages; C++ is a necessity
+• Familiarity with MS Office applications: Outlook, Word, ExcelPreferred Skills and Education
+• (Computer Science or Computer Engineering preferred) with, at minimum, Junior standing
+• Minimum GPA of 3.0
+• Exposure to multiple Operating Systems (e.g., Windows, UNIX/Linux/BSD, OS X)
+• Experience generating and writing supporting documents such as software requirements, user manuals / tools documentation, and software design documents
+• SysML or UML modeling
+• Experience with IDE’s such as Visual Studio, Eclipse
+• Experience with scripting languages (i.e. Bash/shell, Perl, Python, VBA)
+• Experience with embedded platforms such as the Arduino, Raspberry Pi, misc. ARM/AVR-based microcontrollers
+• Experience with Configuration Management tools (git, Subversion, etc.)
+• Familiarity with communications – network protocols and/or serial
+About BAE Systems Platforms & Services BAE Systems is a premier global defense and security company with approximately 90,000 employees delivering a full range of products and services for air, land and naval forces, as well as advanced electronics, security, information technology solutions and customer support and services. Platforms & Services designs, develops, produces, supports, maintains, modernizes and upgrades armored combat vehicles, wheeled vehicles, naval guns, surface ship combatants, commercial vessels, missile launchers, artillery systems, military ordnance, and protective wear and armor. Equal Opportunity Employer: Females/Minorities/Veterans/Disability/Sexual Orientation/Gender Identity/Gender Expression
