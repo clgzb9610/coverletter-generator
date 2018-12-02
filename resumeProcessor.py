@@ -13,13 +13,14 @@ resume = text_extract("resumes/sample4.pdf")
 fh = open("resume.txt","w")
 fh.write(resume)
 fh.close()
+# nltk.download('stopwords')
 
 def process_text(file_path):
     fileIn = open(file_path, 'r')
     strList = fileIn.readlines()
     newStr = ""
     for i in strList:
-        i = i.decode('utf-8').strip()
+        i = i.strip()
         if i != '':
             newStr = newStr + i
         else:

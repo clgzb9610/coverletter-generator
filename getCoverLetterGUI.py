@@ -5,7 +5,8 @@ This file generates the GUI interface for the main program
 
 from tkinter import *
 import tkinter.filedialog
-import getTemplate
+from getTemplate import *
+from resumeProcessor import *
 
 class getCoverLetterGUI:
 
@@ -13,6 +14,8 @@ class getCoverLetterGUI:
     def __init__(self):
         self.root = Tk()
         self.root.title("Get Cover Letter")
+        self.root.geometry("500x500")
+        self.root.resizable(0, 0)
 
     def setupWidgets(self):
         self._initBasicControls()
@@ -41,22 +44,23 @@ class getCoverLetterGUI:
     def _initBasicControls(self):
         basicControlFrame = Frame(self.root, bd=5, padx=5, pady=5, relief="groove")
         basicControlFrame.grid(row=1, column=1)
+        basicControlFrame.pack(anchor=N, fill=BOTH, expand=True, side=LEFT)
         basicControlFrameTitle = Label(basicControlFrame, text="Generate Your Cover Letter", font="Arial 14 bold", padx=5,
                                        pady=5)
-        basicControlFrameTitle.grid(row=0, column=1)
+        basicControlFrameTitle.place(relx=0.5, rely=0.05, anchor=CENTER)
 
         # Quit Button
         masterQuitButton = Button(basicControlFrame, text="Quit", command=self.masterQuit)
-        masterQuitButton.grid(row=0, column=3)
+        masterQuitButton.place(relx = 0.5, rely = 0.95, anchor=CENTER)
 
         # Load Button
         masterLoadButton = Button(basicControlFrame, text="Load", command=self.masterLoad)
-        masterLoadButton.grid(row=1, column=1, pady=10, padx=10)
+        masterLoadButton.place(relx = 0.5, rely = 0.15, anchor = CENTER)
 
         # Error Output
         self.errorMessage = StringVar()
         loadErrorOutputLabel = Label(basicControlFrame, textvariable=self.errorMessage, font="Arial 12", padx=5, pady=0)
-        loadErrorOutputLabel.grid(row=10, column=1)
+        loadErrorOutputLabel.grid(row=3, column=1)
 
 
     def _initKeywordSelections(self):
