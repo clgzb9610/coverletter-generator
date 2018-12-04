@@ -17,6 +17,7 @@ class getCoverLetterGUI:
         self.root.geometry("500x500")
         self.root.resizable(0, 0)
         self.keywords = StringVar()
+        self.keywords_list = list()
 
     def setupWidgets(self):
         self._initBasicControls()
@@ -33,8 +34,12 @@ class getCoverLetterGUI:
             self.keywords.set(extract_keywords(filename))
             self.root.update()
 
-    # def masterSelection(self):
-    #     self.root.update()
+    def masterSelection(self):
+        selection = self.list_box.curselection()
+        for i in selection:
+            entry = self.list_box.get(i)
+            self.keywords_list.append(entry)
+
 
     """Quits the program"""
     def masterQuit(self):
@@ -58,9 +63,11 @@ class getCoverLetterGUI:
 
         # Keywords list box
         list_box_label = Label(basicControlFrame, text = "Keywords", font = "Arial 12 bold", padx=5, pady=5)
-        list_box_label.place(relx = 0.5, rely = 0.15, anchor = CENTER)
-        list_box = Listbox(basicControlFrame, listvariable=self.keywords, selectmode=MULTIPLE, width=20, height=10)
-        list_box.place(relx = 0.5, rely = 0.35, anchor = CENTER)
+        list_box_label.place(relx = 0.5, rely = 0.2, anchor = CENTER)
+        self.list_box = Listbox(basicControlFrame, listvariable=self.keywords, selectmode=MULTIPLE, width=30, height=15)
+        self.list_box.place(relx = 0.5, rely = 0.5, anchor = CENTER)
+        select_btn = Button(basicControlFrame, text="Choose", command=self.masterSelection)
+        select_btn.place(relx=0.5, rely=0.85, anchor = CENTER)
 
         # Quit Button
         masterQuitButton = Button(basicControlFrame, text="Quit", command=self.masterQuit)

@@ -3,7 +3,7 @@ from rake_nltk import Rake
 from tkinter import *
 
 
-def extract_keywords(file_path, length=2):
+def extract_keywords(file_path, length=4):
     r = Rake(min_length=length)
     text = _text_extract(file_path)
     r.extract_keywords_from_text(_process_text(text))
@@ -16,8 +16,6 @@ def _text_extract(path):
     resumePage = pdfReader.getPage(0)
     text = resumePage.extractText()
     return text
-
-# nltk.download('stopwords')
 
 def _process_text(string):
     # fileIn = open(file_path, 'r')
@@ -32,7 +30,7 @@ def _process_text(string):
     return newStr
 
 def _list_to_string(list):
-    string = ""
+    return_string = ""
     for string in list:
-        string += "".join(string.split()) + " "
-    return string
+        return_string += "_".join(string.split())+ " "
+    return return_string
