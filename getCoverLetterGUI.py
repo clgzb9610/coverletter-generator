@@ -39,13 +39,12 @@ class getCoverLetterGUI:
         for i in selection:
             entry = self.list_box.get(i)
             self.keywords_list.append(entry)
-
+        self.main = Toplevel(self.root)
+        self.main.title("Generating Templates")
 
     """Quits the program"""
     def masterQuit(self):
         self.root.destroy()
-
-
 
     #####################################
     #private methods
