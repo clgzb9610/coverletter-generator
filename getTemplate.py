@@ -14,7 +14,3 @@ def get_template(keyword):
         print("Such keyword doesn't exist")
         return ""
 
-
-"""A function that returns an introduction part for the cover letter"""
-def get_introduction():
-    return ""

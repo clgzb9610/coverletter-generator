@@ -16,6 +16,7 @@ class getCoverLetterGUI:
         self.root.title("Get Cover Letter")
         self.root.geometry("500x500")
         self.root.resizable(0, 0)
+        self.keywords = []
 
     def setupWidgets(self):
         self._initBasicControls()
@@ -30,8 +31,9 @@ class getCoverLetterGUI:
         """Asks the user to select a filename of the appropriate type, then it creates the naive bayes
         network, and displays it."""
         fileOkay, filename = self._getFilename("Select your resume")
-        if fileOkay: # TODO: Here we should parse the input file into readable contents
-            print("Need to work on this part")
+        if fileOkay:
+            self.keywords = extract_keywords(filename)
+            self.errorMessage.set(len(self.keywords))
 
 
     """Quits the program"""

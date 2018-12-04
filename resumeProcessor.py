@@ -1,25 +1,27 @@
 import PyPDF2
 from rake_nltk import Rake
 
-def text_extract(path):
+def extract_keywords(file_path, length=2):
+    r = Rake(min_length=length)
+    text = _text_extract(file_path)
+    r.extract_keywords_from_text(_process_text(text))
+    keywords = r.get_ranked_phrases()
+    return keywords
+
+def _text_extract(path):
     pdfObj = open(path, 'rb')
     pdfReader = PyPDF2.PdfFileReader(pdfObj)
     resumePage = pdfReader.getPage(0)
     text = resumePage.extractText()
     return text
 
-resume = text_extract("resumes/sample4.pdf")
-# print(resume)
-fh = open("resume.txt","w")
-fh.write(resume)
-fh.close()
 # nltk.download('stopwords')
 
-def process_text(file_path):
-    fileIn = open(file_path, 'r')
-    strList = fileIn.readlines()
+def _process_text(string):
+    # fileIn = open(file_path, 'r')
+    # strList = text_file.readlines()
     newStr = ""
-    for i in strList:
+    for i in string:
         i = i.strip()
         if i != '':
             newStr = newStr + i
@@ -27,13 +29,4 @@ def process_text(file_path):
             newStr = newStr + " "
     return newStr
 
-cleaned_string = process_text("resume.txt")
-# print(cleaned_string)
-# fh = open("resume.txt","w")
-# fh.write(cleaned_string)
-# fh.close()
-
-r = Rake(min_length=4)
-r.extract_keywords_from_text(cleaned_string)
-keywords = r.get_ranked_phrases()
-print(keywords)
+print(_text_extract("/Users/xinyuyang/Desktop/comp484/coverletter-generator/resumes/sample1.pdf"))
