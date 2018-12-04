@@ -1,12 +1,14 @@
 import PyPDF2
 from rake_nltk import Rake
+from tkinter import *
+
 
 def extract_keywords(file_path, length=2):
     r = Rake(min_length=length)
     text = _text_extract(file_path)
     r.extract_keywords_from_text(_process_text(text))
     keywords = r.get_ranked_phrases()
-    return keywords
+    return _list_to_string(keywords)
 
 def _text_extract(path):
     pdfObj = open(path, 'rb')
@@ -29,4 +31,8 @@ def _process_text(string):
             newStr = newStr + " "
     return newStr
 
-print(_text_extract("/Users/xinyuyang/Desktop/comp484/coverletter-generator/resumes/sample1.pdf"))
+def _list_to_string(list):
+    string = ""
+    for string in list:
+        string += "".join(string.split()) + " "
+    return string

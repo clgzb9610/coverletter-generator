@@ -16,12 +16,10 @@ class getCoverLetterGUI:
         self.root.title("Get Cover Letter")
         self.root.geometry("500x500")
         self.root.resizable(0, 0)
-        self.keywords = []
+        self.keywords = StringVar()
 
     def setupWidgets(self):
         self._initBasicControls()
-        self._initKeywordSelections()
-
 
     def goPorgram(self):
         self.root.mainloop()
@@ -32,13 +30,16 @@ class getCoverLetterGUI:
         network, and displays it."""
         fileOkay, filename = self._getFilename("Select your resume")
         if fileOkay:
-            self.keywords = extract_keywords(filename)
-            self.errorMessage.set(len(self.keywords))
+            self.keywords.set(extract_keywords(filename))
+            self.root.update()
 
+    # def masterSelection(self):
+    #     self.root.update()
 
     """Quits the program"""
     def masterQuit(self):
         self.root.destroy()
+
 
 
     #####################################
@@ -51,23 +52,23 @@ class getCoverLetterGUI:
                                        pady=5)
         basicControlFrameTitle.place(relx=0.5, rely=0.05, anchor=CENTER)
 
+        # Load Button
+        masterLoadButton = Button(basicControlFrame, text="Load", command=self.masterLoad)
+        masterLoadButton.place(relx = 0.5, rely = 0.1, anchor = CENTER)
+
+        # Keywords list box
+        list_box = Listbox(basicControlFrame, listvariable=self.keywords, selectmode=MULTIPLE, width=20, height=10)
+        list_box.place(relx = 0.5, rely = 0.35, anchor = CENTER)
+
         # Quit Button
         masterQuitButton = Button(basicControlFrame, text="Quit", command=self.masterQuit)
         masterQuitButton.place(relx = 0.5, rely = 0.95, anchor=CENTER)
-
-        # Load Button
-        masterLoadButton = Button(basicControlFrame, text="Load", command=self.masterLoad)
-        masterLoadButton.place(relx = 0.5, rely = 0.15, anchor = CENTER)
 
         # Error Output
         self.errorMessage = StringVar()
         loadErrorOutputLabel = Label(basicControlFrame, textvariable=self.errorMessage, font="Arial 12", padx=5, pady=0)
         loadErrorOutputLabel.grid(row=3, column=1)
 
-
-    def _initKeywordSelections(self):
-        #TODO: figure out what to do here
-        return
 
     def _getFilename(self, promptString):
         """Pops up a dialog box to ask the user for a filename, returns a boolean if the file was chosen well,
