@@ -57,6 +57,8 @@ class getCoverLetterGUI:
         masterLoadButton.place(relx = 0.5, rely = 0.1, anchor = CENTER)
 
         # Keywords list box
+        list_box_label = Label(basicControlFrame, text = "Keywords", font = "Arial 12 bold", padx=5, pady=5)
+        list_box_label.place(relx = 0.5, rely = 0.15, anchor = CENTER)
         list_box = Listbox(basicControlFrame, listvariable=self.keywords, selectmode=MULTIPLE, width=20, height=10)
         list_box.place(relx = 0.5, rely = 0.35, anchor = CENTER)
 
