@@ -17,8 +17,6 @@ class Page(Frame):
 class introPage(Page):
    def __init__(self, *args, **kwargs):
        Page.__init__(self, *args, **kwargs)
-       label = Label(self, text="Creating the intro")
-       label.pack(side="top", fill="both", expand=True)
 
 class bodyPage(Page):
    def __init__(self, *args, **kwargs):
@@ -93,6 +91,11 @@ class conclusionPage(Page):
        label = Label(self, text="Creating the conclusion")
        label.pack(side="top", fill="both", expand=True)
 
+class resultPage(Page):
+    def __init__(self, *args, **kwargs):
+        Page.__init__(self, *args, **kwargs)
+        label = Label(self, text="I don't know how to do this part yet")
+        label.pack(side="top", fill="both", expand=True)
 
 class MainView(Frame):
     def __init__(self, *args, **kwargs):
@@ -100,6 +103,7 @@ class MainView(Frame):
         p1 = introPage(self)
         p2 = bodyPage(self)
         p3 = conclusionPage(self)
+        p4 = resultPage(self)
 
         buttonframe = Frame(self)
         container = Frame(self)
@@ -113,10 +117,12 @@ class MainView(Frame):
         b1 = Button(buttonframe, text="Introduction", command=p1.lift)
         b2 = Button(buttonframe, text="Main Body", command=p2.lift)
         b3 = Button(buttonframe, text="Conclusion", command=p3.lift)
+        b4 = Button(buttonframe, text="Result Cover Letter", command = p4.lift)
 
         b1.pack(side="left")
         b2.pack(side="left")
         b3.pack(side="left")
+        b4.pack(side="left")
 
         p1.show()
 
