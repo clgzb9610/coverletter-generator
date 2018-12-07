@@ -50,7 +50,7 @@ class introPage(Page):
 
 
     def get_intro_paragraph(self):
-        return "" #TODO: need to combine all information and generate a paragraph
+        return get_intro(self.position_input, self.resource_input, self.reason_input)
 
 
 class bodyPage(Page):

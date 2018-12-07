@@ -14,3 +14,6 @@ def get_template(keyword):
         print("Such keyword doesn't exist")
         return ""
 
+def get_intro(position, resource, reason):
+    #TODO: need to have templates here
+    return position + "/n" + resource + "/n" + reason
