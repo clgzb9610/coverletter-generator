@@ -9,14 +9,25 @@ from getTemplate import *
 from resumeProcessor import *
 
 class Page(Frame):
+
     def __init__(self, *args, **kwargs):
         Frame.__init__(self, *args, **kwargs)
+
     def show(self):
         self.lift()
 
 class introPage(Page):
    def __init__(self, *args, **kwargs):
        Page.__init__(self, *args, **kwargs)
+
+       basicControlFrame = Frame(self, bd=5, padx=5, pady=5, relief="groove")
+       basicControlFrame.grid(row=1, column=1)
+       basicControlFrame.pack(anchor=N, fill=BOTH, expand=True, side=LEFT)
+       basicControlFrameTitle = Label(basicControlFrame, text="Creating the introduction", font="Arial 14 bold", padx=5,
+                                      pady=5)
+       basicControlFrameTitle.place(relx=0.5, rely=0.05, anchor=CENTER)
+
+
 
 class bodyPage(Page):
    def __init__(self, *args, **kwargs):
@@ -49,6 +60,9 @@ class bodyPage(Page):
        loadErrorOutputLabel = Label(basicControlFrame, textvariable=self.errorMessage, font="Arial 12", padx=5, pady=0)
        loadErrorOutputLabel.place(relx=0.5, rely = 0.9, anchor = CENTER)
 
+       # Information
+       self.finished_template = StringVar()
+
 
 
    #Loads the file
@@ -65,7 +79,7 @@ class bodyPage(Page):
        for i in selection:
            entry = self.list_box.get(i)
            self.keywords_list.append(entry)
-           #TODO: creating templates with the keywords given
+           #TODO: creating templates with the keywords given and assign that into self.finished_template
 
 
    #####################################
@@ -100,31 +114,32 @@ class resultPage(Page):
 class MainView(Frame):
     def __init__(self, *args, **kwargs):
         Frame.__init__(self, *args, **kwargs)
-        p1 = introPage(self)
-        p2 = bodyPage(self)
-        p3 = conclusionPage(self)
-        p4 = resultPage(self)
+        self.p1 = introPage(self)
+        self.p2 = bodyPage(self)
+        self.p3 = conclusionPage(self)
+        self.p4 = resultPage(self)
 
         buttonframe = Frame(self)
         container = Frame(self)
         buttonframe.pack(side="top", fill="x", expand=False)
         container.pack(side="top", fill="both", expand=True)
 
-        p1.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
-        p2.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
-        p3.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
+        self.p1.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
+        self.p2.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
+        self.p3.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
+        self.p4.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
 
-        b1 = Button(buttonframe, text="Introduction", command=p1.lift)
-        b2 = Button(buttonframe, text="Main Body", command=p2.lift)
-        b3 = Button(buttonframe, text="Conclusion", command=p3.lift)
-        b4 = Button(buttonframe, text="Result Cover Letter", command = p4.lift)
+        b1 = Button(buttonframe, text="Introduction", command=self.p1.lift)
+        b2 = Button(buttonframe, text="Main Body", command=self.p2.lift)
+        b3 = Button(buttonframe, text="Conclusion", command=self.p3.lift)
+        b4 = Button(buttonframe, text="Result Cover Letter", command = self.p4.lift) #TODO: gather information method
 
         b1.pack(side="left")
         b2.pack(side="left")
         b3.pack(side="left")
         b4.pack(side="left")
 
-        p1.show()
+        self.p1.show()
 
 class getCoverLetterGUI:
 
