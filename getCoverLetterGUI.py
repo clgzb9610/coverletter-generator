@@ -46,6 +46,10 @@ class introPage(Page):
         reason_entry.place(relx = 0.5, rely = 0.4, anchor = CENTER)
 
 
+    def get_intro_paragraph(self):
+        return "" #TODO: need to combine all information and generate a paragraph
+
+
 class bodyPage(Page):
     def __init__(self, *args, **kwargs):
         Page.__init__(self, *args, **kwargs)
@@ -81,6 +85,8 @@ class bodyPage(Page):
         self.finished_template = StringVar()
 
 
+    def get_main_paragraph(self):
+        return "" #TODO: need to combine all information and generate a paragraph
 
     #Loads the file
     def masterLoad(self):
@@ -122,13 +128,27 @@ class conclusionPage(Page):
         label = Label(self, text="Creating the conclusion")
         label.pack(side="top", fill="both", expand=True)
 
+    def get_conclusion_paragraph(self):
+        return "" #TODO: need to combine all information and generate a paragraph
+
 
 class resultPage(Page):
     def __init__(self, *args, **kwargs):
         Page.__init__(self, *args, **kwargs)
-        label = Label(self, text="I don't know how to do this part yet")
-        label.pack(side="top", fill="both", expand=True)
 
+        basicControlFrame = Frame(self, bd=5, padx=5, pady=5, relief="groove")
+        basicControlFrame.grid(row=1, column=1)
+        basicControlFrame.pack(anchor=N, fill=BOTH, expand=True, side=LEFT)
+        basicControlFrameTitle = Label(basicControlFrame, text="Here's the result", font="Arial 14 bold", padx=5,
+                                      pady=5)
+        basicControlFrameTitle.place(relx=0.5, rely=0.05, anchor=CENTER)
+
+        self.result_paragraph = StringVar()
+        result_label = Label(basicControlFrame, textvariable=self.result_paragraph, font="Arial 12", padx=5, pady=5)
+        result_label.place(relx = 0.5, rely = 0.1, anchor = CENTER)
+
+    def set_result_paragraph(self, intro, main, conclusion):
+        self.result_paragraph.set(intro + "/n" + main + "/n" + conclusion)
 
 class MainView(Frame):
     def __init__(self, *args, **kwargs):
@@ -151,7 +171,7 @@ class MainView(Frame):
         b1 = Button(buttonframe, text="Introduction", command=self.p1.lift)
         b2 = Button(buttonframe, text="Main Body", command=self.p2.lift)
         b3 = Button(buttonframe, text="Conclusion", command=self.p3.lift)
-        b4 = Button(buttonframe, text="Result Cover Letter", command = self.p4.lift) #TODO: gather information method
+        b4 = Button(buttonframe, text="Result Cover Letter", command = self.get_all_info) #TODO: gather information method
 
         b1.pack(side="left")
         b2.pack(side="left")
@@ -159,6 +179,13 @@ class MainView(Frame):
         b4.pack(side="left")
 
         self.p1.show()
+
+    def get_all_info(self):
+        self.p4.lift()
+        intro = self.p1.get_intro_paragraph()
+        main_body = self.p2.get_main_paragraph()
+        conclusion = self.p3.get_conclusion_paragraph()
+        self.p4.set_result_paragraph(intro, main_body, conclusion)
 
 
 class getCoverLetterGUI:
