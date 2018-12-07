@@ -31,19 +31,22 @@ class introPage(Page):
         position_label = Label(basicControlFrame, text = "Position Applied: ", font="Arial 12 bold", padx = 5, pady=5)
         position_label.place(relx = 0.2, rely = 0.2, anchor = CENTER)
         position_entry = Entry(basicControlFrame, textvariable=self.position_input, font="Arial 12 bold")
-        position_entry.place(relx = 0.5, rely = 0.2, anchor = CENTER)
+        position_entry.place(relx = 0.65, rely = 0.2, width= 250, anchor = CENTER)
 
         self.resource_input = StringVar()
         resource_label = Label(basicControlFrame, text = "Resource of this opportunity: ", font="Arial 12 bold", padx = 5, pady=5)
         resource_label.place(relx = 0.2, rely = 0.3, anchor = CENTER)
         resource_entry = Entry(basicControlFrame, textvariable=self.resource_input, font="Arial 12 bold")
-        resource_entry.place(relx = 0.5, rely = 0.3, anchor = CENTER)
+        resource_entry.place(relx = 0.65, rely = 0.3, width = 250, anchor = CENTER)
 
         self.reason_input = StringVar()
-        reason_label = Label(basicControlFrame, text = "Reasons of appling: ", font="Arial 12 bold", padx = 5, pady=5)
+        reason_label = Label(basicControlFrame, text = "Reasons of applying: ", font="Arial 12 bold", padx = 5, pady=5)
         reason_label.place(relx = 0.2, rely = 0.4, anchor = CENTER)
         reason_entry = Entry(basicControlFrame, textvariable=self.reason_input, font="Arial 12 bold")
-        reason_entry.place(relx = 0.5, rely = 0.4, anchor = CENTER)
+        reason_entry.place(relx = 0.65, rely = 0.65, width= 250, height = 250, anchor = CENTER)
+
+
+        #TODO: fixed reason_entry into multilines
 
 
     def get_intro_paragraph(self):
@@ -125,11 +128,25 @@ class bodyPage(Page):
 class conclusionPage(Page):
     def __init__(self, *args, **kwargs):
         Page.__init__(self, *args, **kwargs)
-        label = Label(self, text="Creating the conclusion")
-        label.pack(side="top", fill="both", expand=True)
+
+        basicControlFrame = Frame(self, bd=5, padx=5, pady=5, relief="groove")
+        basicControlFrame.grid(row=1, column=1)
+        basicControlFrame.pack(anchor=N, fill=BOTH, expand=True, side=LEFT)
+        basicControlFrameTitle = Label(basicControlFrame, text="Writing the conclusion", font="Arial 14 bold", padx=5,
+                                      pady=5)
+        basicControlFrameTitle.place(relx=0.5, rely=0.05, anchor=CENTER)
+
+        self.passion_input = StringVar()
+        passion_label = Label(basicControlFrame, text = "Restate your passion", font="Arial 12 bold", padx = 5, pady=5)
+        passion_label.place(relx = 0.2, rely = 0.4, anchor = CENTER)
+        passion_entry = Entry(basicControlFrame, textvariable=self.passion_input, font="Arial 12 bold")
+        passion_entry.place(relx = 0.65, rely = 0.65, width= 250, height = 250, anchor = CENTER)
+
+
+        #TODO: fixed entry into multilines
 
     def get_conclusion_paragraph(self):
-        return "" #TODO: need to combine all information and generate a paragraph
+        return self.passion_input #TODO: need to combine all information and generate a paragraph
 
 
 class resultPage(Page):
@@ -171,7 +188,7 @@ class MainView(Frame):
         b1 = Button(buttonframe, text="Introduction", command=self.p1.lift)
         b2 = Button(buttonframe, text="Main Body", command=self.p2.lift)
         b3 = Button(buttonframe, text="Conclusion", command=self.p3.lift)
-        b4 = Button(buttonframe, text="Result Cover Letter", command = self.get_all_info) #TODO: gather information method
+        b4 = Button(buttonframe, text="Result Cover Letter", command = self.get_all_info)
 
         b1.pack(side="left")
         b2.pack(side="left")
