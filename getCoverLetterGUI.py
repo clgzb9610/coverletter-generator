@@ -163,6 +163,22 @@ class resultPage(Page):
         result_message = Message(basicControlFrame, textvariable=self.result_paragraph, font="Arial 12")
         result_message.place(relx = 0.5, rely = 0.5, width = 250, height = 250, anchor = CENTER)
 
+        file_name_title = Label(basicControlFrame, text="File Name: ", font = "Arial 12")
+        file_name_title.place(relx = 0.2, rely = 0.9, anchor = CENTER)
+        self.file_name = StringVar()
+        file_name_label = Entry(basicControlFrame, textvariable=self.file_name, font="Arial 12")
+        file_name_label.place(relx = 0.4, rely = 0.9, anchor = CENTER)
+        save_button = Button(basicControlFrame, text="Save", command = self.save_to_local)
+        save_button.place(relx = 0.7, rely = 0.9, anchor = CENTER)
+
+
+    def save_to_local(self):
+        if (self.file_name.get() != None):
+            f = open(self.file_name.get() + ".txt", "w")
+            f.write(self.result_paragraph.get())
+            f.close()
+
+
     def set_result_paragraph(self, intro, main, conclusion):
         self.result_paragraph.set(intro + "\n" + main + "\n" + conclusion)
 
