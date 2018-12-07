@@ -50,7 +50,7 @@ class introPage(Page):
 
 
     def get_intro_paragraph(self):
-        return get_intro(self.position_input, self.resource_input, self.reason_input)
+        return get_intro(str(self.position_input.get()), str(self.resource_input.get()), str(self.reason_input.get()))
 
 
 class bodyPage(Page):
@@ -89,7 +89,7 @@ class bodyPage(Page):
 
 
     def get_main_paragraph(self):
-        return "" #TODO: need to combine all information and generate a paragraph
+        return "".join(self.keywords_list)
 
     #Loads the file
     def masterLoad(self):
@@ -142,11 +142,10 @@ class conclusionPage(Page):
         passion_entry = Entry(basicControlFrame, textvariable=self.passion_input, font="Arial 12 bold")
         passion_entry.place(relx = 0.65, rely = 0.65, width= 250, height = 250, anchor = CENTER)
 
-
         #TODO: fixed entry into multilines
 
     def get_conclusion_paragraph(self):
-        return self.passion_input #TODO: need to combine all information and generate a paragraph
+        return str(self.passion_input.get())
 
 
 class resultPage(Page):
@@ -161,11 +160,11 @@ class resultPage(Page):
         basicControlFrameTitle.place(relx=0.5, rely=0.05, anchor=CENTER)
 
         self.result_paragraph = StringVar()
-        result_label = Label(basicControlFrame, textvariable=self.result_paragraph, font="Arial 12", padx=5, pady=5)
-        result_label.place(relx = 0.5, rely = 0.1, anchor = CENTER)
+        result_message = Message(basicControlFrame, textvariable=self.result_paragraph, font="Arial 12")
+        result_message.place(relx = 0.5, rely = 0.5, width = 250, height = 250, anchor = CENTER)
 
     def set_result_paragraph(self, intro, main, conclusion):
-        self.result_paragraph.set(intro + "/n" + main + "/n" + conclusion)
+        self.result_paragraph.set(intro + "\n" + main + "\n" + conclusion)
 
 class MainView(Frame):
     def __init__(self, *args, **kwargs):
