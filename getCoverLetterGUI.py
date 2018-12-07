@@ -27,8 +27,23 @@ class introPage(Page):
                                       pady=5)
         basicControlFrameTitle.place(relx=0.5, rely=0.05, anchor=CENTER)
 
-        self.name_input = StringVar()
-        name_entry = Entry(basicControlFrame, textvariable=self.name_input)
+        self.position_input = StringVar()
+        position_label = Label(basicControlFrame, text = "Position Applied: ", font="Arial 12 bold", padx = 5, pady=5)
+        position_label.place(relx = 0.2, rely = 0.2, anchor = CENTER)
+        position_entry = Entry(basicControlFrame, textvariable=self.position_input, font="Arial 12 bold")
+        position_entry.place(relx = 0.5, rely = 0.2, anchor = CENTER)
+
+        self.resource_input = StringVar()
+        resource_label = Label(basicControlFrame, text = "Resource of this opportunity: ", font="Arial 12 bold", padx = 5, pady=5)
+        resource_label.place(relx = 0.2, rely = 0.3, anchor = CENTER)
+        resource_entry = Entry(basicControlFrame, textvariable=self.resource_input, font="Arial 12 bold")
+        resource_entry.place(relx = 0.5, rely = 0.3, anchor = CENTER)
+
+        self.reason_input = StringVar()
+        reason_label = Label(basicControlFrame, text = "Reasons of appling: ", font="Arial 12 bold", padx = 5, pady=5)
+        reason_label.place(relx = 0.2, rely = 0.4, anchor = CENTER)
+        reason_entry = Entry(basicControlFrame, textvariable=self.reason_input, font="Arial 12 bold")
+        reason_entry.place(relx = 0.5, rely = 0.4, anchor = CENTER)
 
 
 class bodyPage(Page):
