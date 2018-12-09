@@ -33,24 +33,30 @@ class introPage(Page):
         position_entry = Entry(basicControlFrame, textvariable=self.position_input, font="Arial 12 bold")
         position_entry.place(relx = 0.65, rely = 0.2, width= 250, anchor = CENTER)
 
+        self.company_input = StringVar()
+        company_label = Label(basicControlFrame, text="Company Name: ", font="Arial 12 bold", padx=5, pady=5)
+        company_label.place(relx=0.2, rely=0.3, anchor=CENTER)
+        company_entry = Entry(basicControlFrame, textvariable=self.company_input, font="Arial 12 bold")
+        company_entry.place(relx=0.65, rely=0.3, width=250, anchor=CENTER)
+
         self.resource_input = StringVar()
         resource_label = Label(basicControlFrame, text = "Resource of this opportunity: ", font="Arial 12 bold", padx = 5, pady=5)
-        resource_label.place(relx = 0.2, rely = 0.3, anchor = CENTER)
+        resource_label.place(relx = 0.2, rely = 0.4, anchor = CENTER)
         resource_entry = Entry(basicControlFrame, textvariable=self.resource_input, font="Arial 12 bold")
-        resource_entry.place(relx = 0.65, rely = 0.3, width = 250, anchor = CENTER)
+        resource_entry.place(relx = 0.65, rely = 0.4, width = 250, anchor = CENTER)
 
         self.reason_input = StringVar()
         reason_label = Label(basicControlFrame, text = "Reasons of applying: ", font="Arial 12 bold", padx = 5, pady=5)
-        reason_label.place(relx = 0.2, rely = 0.4, anchor = CENTER)
+        reason_label.place(relx = 0.2, rely = 0.5, anchor = CENTER)
         reason_entry = Entry(basicControlFrame, textvariable=self.reason_input, font="Arial 12 bold")
-        reason_entry.place(relx = 0.65, rely = 0.65, width= 250, height = 250, anchor = CENTER)
+        reason_entry.place(relx = 0.65, rely = 0.65, width= 250, height = 180, anchor = CENTER)
 
 
         #TODO: fixed reason_entry into multilines
 
 
     def get_intro_paragraph(self):
-        return get_intro(str(self.position_input.get()), str(self.resource_input.get()), str(self.reason_input.get()))
+        return get_intro(str(self.position_input.get()), str(self.company_input.get()), str(self.resource_input.get()), str(self.reason_input.get()))
 
 
 class bodyPage(Page):
@@ -138,14 +144,32 @@ class conclusionPage(Page):
 
         self.passion_input = StringVar()
         passion_label = Label(basicControlFrame, text = "Restate your passion", font="Arial 12 bold", padx = 5, pady=5)
-        passion_label.place(relx = 0.2, rely = 0.4, anchor = CENTER)
+        passion_label.place(relx = 0.2, rely = 0.25, anchor = CENTER)
         passion_entry = Entry(basicControlFrame, textvariable=self.passion_input, font="Arial 12 bold")
-        passion_entry.place(relx = 0.65, rely = 0.65, width= 250, height = 250, anchor = CENTER)
+        passion_entry.place(relx = 0.65, rely = 0.25, width= 250, height = 100, anchor = CENTER)
+
+        self.phone_input = StringVar()
+        phone_label = Label(basicControlFrame, text="Phone Numer: ", font="Arial 12 bold", padx=5, pady=5)
+        phone_label.place(relx=0.2, rely=0.4, anchor=CENTER)
+        phone_entry = Entry(basicControlFrame, textvariable=self.phone_input, font="Arial 12 bold")
+        phone_entry.place(relx=0.65, rely=0.4, width=250, anchor=CENTER)
+
+        self.email_input = StringVar()
+        email_label = Label(basicControlFrame, text="Email Address: ", font="Arial 12 bold", padx=5, pady=5)
+        email_label.place(relx=0.2, rely=0.5, anchor=CENTER)
+        email_entry = Entry(basicControlFrame, textvariable=self.email_input, font="Arial 12 bold")
+        email_entry.place(relx=0.65, rely=0.5, width=250, anchor=CENTER)
+
+        self.company_input = StringVar()
+        company_label = Label(basicControlFrame, text="Company Name: ", font="Arial 12 bold", padx=5, pady=5)
+        company_label.place(relx=0.2, rely=0.6, anchor=CENTER)
+        company_entry = Entry(basicControlFrame, textvariable=self.company_input, font="Arial 12 bold")
+        company_entry.place(relx=0.65, rely=0.6, width=250, anchor=CENTER)
 
         #TODO: fixed entry into multilines
 
     def get_conclusion_paragraph(self):
-        return str(self.passion_input.get())
+        return get_conclusion(str(self.passion_input.get()), str(self.phone_input.get()), str(self.email_input.get()), str(self.company_input.get()))
 
 
 class resultPage(Page):
@@ -161,7 +185,7 @@ class resultPage(Page):
 
         self.result_paragraph = StringVar()
         result_message = Message(basicControlFrame, textvariable=self.result_paragraph, font="Arial 12")
-        result_message.place(relx = 0.5, rely = 0.5, width = 250, height = 250, anchor = CENTER)
+        result_message.place(relx = 0.5, rely = 0.5, width = 350, height = 250, anchor = CENTER)
 
         file_name_title = Label(basicControlFrame, text="File Name: ", font = "Arial 12")
         file_name_title.place(relx = 0.2, rely = 0.9, anchor = CENTER)
