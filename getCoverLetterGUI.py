@@ -185,7 +185,7 @@ class resultPage(Page):
 
         self.result_paragraph = StringVar()
         result_message = Message(basicControlFrame, textvariable=self.result_paragraph, font="Arial 12")
-        result_message.place(relx = 0.5, rely = 0.5, width = 350, height = 250, anchor = CENTER)
+        result_message.place(relx = 0.5, rely = 0.5, width = 550, height = 250, anchor = CENTER)
 
         file_name_title = Label(basicControlFrame, text="File Name: ", font = "Arial 12")
         file_name_title.place(relx = 0.2, rely = 0.9, anchor = CENTER)

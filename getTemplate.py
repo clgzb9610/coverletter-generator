@@ -1,10 +1,16 @@
 import random
+import resumeProcessor
+import jobDescriptionProcessor
 
 """
 This file receives keywords and produces a template accordingly.
 """
 
+# ===========Body Paragraph==================
+languageList = ["Python", "Java", "C++", "C#", "C", "Ruby", "Javascript", "HTML", "CSS", "Ionic", "MySQL", "Perl", "React", "Go", "MongoDB", "Express", "Django", "Angular"]
 
+
+# ===========Keyword Matching==================
 # Here's the dictionary used for the matching between keywords and templates.
 keyword_template_match = {}
 
@@ -46,7 +52,7 @@ def _ending_sentence(position, company):
 
 # ===========CONCLUSION==================
 def get_conclusion(passion, phone, email, company):
-    return _input_concludingSentence(company) + " " + _input_contactinfo(phone, email) + " " + _input_passion(passion)
+    return _input_concludingSentence(company) + " " + _input_contactinfo(phone, email) + " " + _input_passion(passion) + " " + _input_ending()
 
 concludingSentence_template = ["I would be proud to contribute to and again be associated with the COMPANY, and I feel that I would be a valuable asset to your organization.",
                               "I trust that my immense skills and previous experience have prepared me for this opportunity to become an asset to COMPANY.",
